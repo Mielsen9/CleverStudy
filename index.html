@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CleverStudy</title>
+  <link rel="icon" href="./imgs/welcom/cs.svg" type="image/svg">
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
   <link rel="stylesheet" href="./main.css">
 </head>
 <body>
@@ -48,7 +53,7 @@
           </div>
         </div>
         <div class="header__language language">
-            <select name="language" id="language__select">
+          <select name="language" id="language__select">
               <option value="ua">UA</option>
               <option value="en">En</option>
             </select>
@@ -765,6 +770,8 @@
     </div>
   </section>
   <!-- reviews section -->
+
+
   <section class="reviews none-i " id="reviews">
     <div class="reviews__conteiner wrapper-small">
 
@@ -774,33 +781,59 @@
         </h2>
       </div>
 
-      <div class="reviwes__img-box" id="reviwes__img-box">
-        <picture class="reviews__img">
-          <img src="./imgs/reviews/Link1.png" alt="review">
-        </picture>
+      <div class="reviwes__img-box" >
 
-        <picture class="reviews__img">
-          <img src="./imgs/reviews/Link3.png" alt="review">
-        </picture>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <picture class="reviews__img">
+                <img src="./imgs/reviews/Link1.png" alt="review">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture class="reviews__img">
+                <img src="./imgs/reviews/Link3.png" alt="review">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture class="reviews__img">
+                <img src="./imgs/reviews/Link4.png" alt="review">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture class="reviews__img">
+                <img src="./imgs/reviews/Link4.png" alt="review">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <img src="./imgs/reviews/Link5.png" alt="review">
+            </div>
+            <div class="swiper-slide">
+              <picture class="reviews__img">
+                <img src="./imgs/reviews/Link6.png" alt="review">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture class="reviews__img">
+                <img src="./imgs/reviews/Link1.png" alt="review">
+              </picture>
+            </div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
 
-        <picture class="reviews__img">
-          <img src="./imgs/reviews/Link4.png" alt="review">
-        </picture>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
-        <picture class="reviews__img">
-          <img src="./imgs/reviews/Link5.png" alt="review">
-        </picture>
+        </div>
 
-        <picture class="reviews__img">
-          <img src="./imgs/reviews/Link6.png" alt="review">
-        </picture>
       </div>
-      
-      <button class="reviews__more-btn reviews__btn-text" 
-        id="show-more-btn-reviews">
-        Бiльше вiдгукiв
-      </button>
-    
+
     </div>
   </section>
   <!-- answer section -->
@@ -1235,7 +1268,7 @@
         <div class="footer__pay">
           <div class="footer__btn btn">
             <a class="btn__link" href="tel:+38(093)9886200">
-              РЕКОМЕНДАЦІЯ/СКАРГА ВЛАСНИКУ
+              СКАРГА ВЛАСНИКУ
             </a>
           </div>
           <picture class="pay__img">
@@ -1271,5 +1304,45 @@
 
 <!-- link js -->
  <script src="global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.swiper', {
+      loop: true,
+      slidesPerView: 6, // Кількість видимих слайдів
+      spaceBetween: 20, // Відстань між слайдами
+
+      // Пагінація
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Навігаційні стрілки
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+    });
+  });
+</script>
 </body>
 </html>
